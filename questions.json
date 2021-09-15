@@ -1,6 +1,8 @@
 {
- "name": "Random Questions",
- "quiz":[
+ "name": "Questions",
+ "quiz": { 
+   "random":
+ [
 
  {
   "q1": {
@@ -58,4 +60,5 @@
  }
 }
   ]
+ }
 }
