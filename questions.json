@@ -1,0 +1,49 @@
+// Create quiz data in a json file
+{
+ "name": "Random Questions",
+ "quiz":[
+
+ {
+  "q1": {
+  "question": "What is your name?",
+  "type": "text"
+ }
+},
+
+{
+  "q2": {
+  "question": "How old are you?",
+  "type": "number"
+ }
+},
+
+{
+  "q3": {
+  "question": "Which one is correct team name in NBA",
+  "type": "single-select",
+   "options": [
+    "New York Bulls",
+    "Los Angeles Kings",
+    "Golden State Warriros",
+    "Huston Rocket"
+  ], 
+  "answer": "Huston Rocket"
+ }
+},
+
+{
+  "q4": {
+  "question": "Which computer languages have you used?",
+  "type": "multi-select",
+   "options": [
+    "JavaScript",
+    "Php",
+    "Java",
+    "Python",
+    "Dart"
+  ]
+ }
+},
+
+  ]
+}
