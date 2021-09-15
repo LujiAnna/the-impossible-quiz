@@ -8,7 +8,7 @@ const answer = document.getElementById('answer');
 const questions = 'questions.json';
 
 // Load a new question
-async function newQuestion (i)  {
+async function newQuestion (i :any)  {
   //   fetch questions
   // error chrome: https://stackoverflow.com/questions/49971575/chrome-fetch-api-cannot-load-file-how-to-workaround
   const response = await fetch(questions);
@@ -22,7 +22,7 @@ async function newQuestion (i)  {
 
   let arrQ = data.quiz.random;
  
-  question.textContent = `arrQ[i].q${i+1}.question`;
+  question!.textContent = `arrQ[i].q${i+1}.question`;
   }
 
 const getQuestion = () => {    
@@ -32,16 +32,16 @@ const getQuestion = () => {
     newQuestion(i);
   }
   //   change btn text to submit question. Avoid .innerText as it skips <>
-  btn.textContent = 'Submit Answer';
+  btn!.textContent = 'Submit Answer';
   // btn.innerHTML = 'Submit Answer';
   // btn.innerText = 'Submit Answer';
-  answer.value = '';
+  (<HTMLInputElement>answer)!.value = '';
 }
 
 // getQuestion();
 
 // Listen to events
-btn.addEventListener('click', getQuestion);
+btn!.addEventListener('click', getQuestion);
 
 // TODO: switch to tsx - last one for today, then move into another thing
 
