@@ -4,12 +4,13 @@
 const question = document.getElementById('question');
 const btn = document.getElementById('btn');
 const answer = document.getElementById('answer');
+const questionNumber = document.getElementById('question-number');
 
 const questions = 'questions.json';
 
 // Load a new question
-async function newQuestion (i :any)  {
-  //   fetch questions
+async function newQuestion ()  {
+  // fetch questions
   // error chrome: https://stackoverflow.com/questions/49971575/chrome-fetch-api-cannot-load-file-how-to-workaround
   const response = await fetch(questions);
   // get response
@@ -21,34 +22,17 @@ async function newQuestion (i :any)  {
   console.log(data.quiz.random[0].q1.question);
 
   let arrQ = data.quiz.random;
- 
-  question!.textContent = `arrQ[i].q${i+1}.question`;
-  }
 
-const getQuestion = () => {    
-  //   console.log('Hello World!!');
-  // loop through a number of questions (1 through 10)
-  for (let i = 0; i < 10; i++) {
-    newQuestion(i);
+  questionNumber!.textContent = `${1} out of 10 questions`;
+    // change btn text to submit question. Avoid .innerText as it skips <>
+    btn!.textContent = 'Submit Answer';
+    // btn.innerHTML = 'Submit Answer';
+    // btn.innerText = 'Submit Answer';
+    (<HTMLInputElement>answer)!.value = '';
+  
+  // question!.textContent = `arrQ[${i}].q${i+1}.question`;
+question!.textContent = arrQ[0].q1.question;
   }
-  //   change btn text to submit question. Avoid .innerText as it skips <>
-  btn!.textContent = 'Submit Answer';
-  // btn.innerHTML = 'Submit Answer';
-  // btn.innerText = 'Submit Answer';
-  (<HTMLInputElement>answer)!.value = '';
-}
-
-// getQuestion();
 
 // Listen to events
-btn!.addEventListener('click', getQuestion);
-
-// TODO: switch to tsx - last one for today, then move into another thing
-
-// TOMORROW - Day 2
-// TODO: Display different questions by looping through them
-// TODO: Verify questions
-// TODO: Give feedback to user
-// TODO: Add hint
-// TODO: Create different types of answers
-// TODO: Store values in the database - skip for now
+btn!.addEventListener('click', newQuestion);

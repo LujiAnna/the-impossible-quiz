@@ -12,9 +12,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const question = document.getElementById('question');
 const btn = document.getElementById('btn');
 const answer = document.getElementById('answer');
+const questionNumber = document.getElementById('question-number');
 const questions = 'questions.json';
 // Load a new question
-function newQuestion(i) {
+function newQuestion() {
     return __awaiter(this, void 0, void 0, function* () {
         //   fetch questions
         // error chrome: https://stackoverflow.com/questions/49971575/chrome-fetch-api-cannot-load-file-how-to-workaround
@@ -27,21 +28,15 @@ function newQuestion(i) {
         console.log(data.quiz.random);
         console.log(data.quiz.random[0].q1.question);
         let arrQ = data.quiz.random;
-        question.textContent = `arrQ[i].q${i + 1}.question`;
+        questionNumber.textContent = `${1} out of 10 questions`;
+        // change btn text to submit question. Avoid .innerText as it skips <>
+        btn.textContent = 'Submit Answer';
+        // btn.innerHTML = 'Submit Answer';
+        // btn.innerText = 'Submit Answer';
+        answer.value = '';
+        // question!.textContent = `arrQ[${i}].q${i+1}.question`;
+        question.textContent = arrQ[0].q1.question;
     });
 }
-const getQuestion = () => {
-    //   console.log('Hello World!!');
-    // loop through a number of questions (1 through 10)
-    for (let i = 0; i < 10; i++) {
-        newQuestion(i);
-    }
-    //   change btn text to submit question. Avoid .innerText as it skips <>
-    btn.textContent = 'Submit Answer';
-    // btn.innerHTML = 'Submit Answer';
-    // btn.innerText = 'Submit Answer';
-    answer.value = '';
-};
-// getQuestion();
 // Listen to events
-btn.addEventListener('click', getQuestion);
+btn.addEventListener('click', newQuestion);

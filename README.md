@@ -1,6 +1,6 @@
 ## The second mission
-- Duration: 3 days
 - Create "The impossible quiz", completely with typescript.
+> might need [chrome extension for web server to fetch json data](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb/related?hl=en)
 
 🌱 Must-have's
 - [x] 10 pages, each with a question and an input field for an answer.
