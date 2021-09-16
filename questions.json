@@ -5,21 +5,16 @@
  [
 
  {
-  "q1": {
   "question": "What is your name?",
   "type": "text"
- }
 },
 
 {
-  "q2": {
   "question": "How old are you?",
   "type": "number"
- }
 },
 
 {
-  "q3": {
   "question": "Which one is correct team name in NBA",
   "type": "single-select",
    "options": [
@@ -29,11 +24,9 @@
     "Huston Rocket"
   ], 
   "answer": "Huston Rocket"
- }
 },
 
 {
-  "q4": {
   "question": "Which computer languages have you used?",
   "type": "multi-select",
    "options": [
@@ -43,11 +36,9 @@
     "Python",
     "Dart"
   ]
- }
 },
 
 {
-  "q5": {
   "question": "5 + 7 = ?",
   "type": "single-select",
    "options": [
@@ -57,8 +48,52 @@
     "13"
   ], 
   "answer": "12"
- }
+},
+
+{
+  "question": "Do you like coding?",
+  "type": "single-select",
+   "options": [
+    "yes",
+    "no"
+  ], 
+  "answer": ""
+},
+
+{
+  "question": "Do birds fly?",
+  "type": "boolean",
+   "options": [
+    "true",
+    "false"
+  ], 
+  "answer": "true"
+},
+
+{
+  "question": "List all your friends",
+  "type": "array",
+  "answer": "[]"
+},
+
+{
+  "question": "Which song do you like ?",
+  "type": "string",
+  "answer": ""
+},
+
+{
+  "question": "Do you like coding ?",
+  "type": "multi-select",
+  "options": [
+    "maybe",
+    "perhaps",
+    "yes",
+    "I have no idea"
+  ], 
+  "answer": ""
 }
+
   ]
  }
 }

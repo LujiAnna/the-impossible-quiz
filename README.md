@@ -8,7 +8,7 @@
 
 
 🌼 Nice-to-have's (Doable)
-- Use different types of answers (numbers, strings, arrays, etc).
+- [x] Use different types of answers (numbers, strings, arrays, etc).
 - Add/remove lives for correct and wrong answers.
 - Add a timer on all the questions. (time up = lose life)
 
