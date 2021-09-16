@@ -89,3 +89,4 @@ function newQuestion() {
 ;
 // Listen to events
 btn.addEventListener('click', newQuestion);
+remove(inputAnswer);

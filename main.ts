@@ -11,8 +11,8 @@ const questions = 'questions.json';
 let count = 0;
 
  // remove older input
-    // const inputAnswer = document.getElementById('answer');
-    // inputAnswer!.remove(); 
+ // const inputAnswer = document.getElementById('answer');
+ // inputAnswer!.remove(); 
 
 function remove(el: any) {
   el.parentNode!.removeChild(el);
@@ -81,9 +81,8 @@ async function newQuestion ()  {
   // add the text node to the newly created div
   newEl.appendChild(newContent);
 
-// document.body is not the parent, it's far up in the DOM hierarchy
+ // document.body is not the parent, it's far up in the DOM hierarchy
   let parentDiv = document.getElementById("answer-form");
-
 
   // add the newly created element and its content into the DOM
   const displayDiv = document.getElementById("display");
@@ -95,10 +94,9 @@ async function newQuestion ()  {
   count++;
   };
 
-
 // Listen to events
 btn!.addEventListener('click', newQuestion);
 
-
+remove(inputAnswer);
 
 
