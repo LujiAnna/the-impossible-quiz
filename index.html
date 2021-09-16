@@ -63,7 +63,7 @@
     </div>
 
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-      <h1 class="display-4 fw-normal">Random</h1>
+      <h1 class="display-4 fw-normal">Random Quiz</h1>
       <p class="fs-5 text-muted" id="question-number"></p>
     </div>
   </header>
@@ -77,14 +77,12 @@
           </div>
           <div class="card-body">
             <h1 class="card-title pricing-card-title">
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" novalidate id="answer-form">
             <div class="row g-3">
-            <div class="col-sm-12">
-              <label for="answer" class="form-label"><small class="text-muted fw-light">Type answer</small></label>
-              <input type="text" class="form-control" id="answer" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Valid answer is required.
-              </div>
+            <div class="col-sm-12" id="display">
+              <!-- <label for="answer" class="form-label"><small class="text-muted fw-light">Type answer</small></label> -->
+              <!-- <input type="text" class="form-control" id="answer" placeholder="type answer" value="" required> -->
+              
             </div>
             </form>   
             </h1>
