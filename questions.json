@@ -42,7 +42,6 @@
   "question": "5 + 7 = ?",
   "type": "single-select",
    "options": [
-    "10",
     "11",
     "12",
     "13"
