@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 window.onload = function () {
-    //your code here
     // get DOM Elements
     const question = document.getElementById('question');
     const btn = document.getElementById('btn');
@@ -22,17 +21,18 @@ window.onload = function () {
     // Load a new question through an async request
     function newQuestion() {
         return __awaiter(this, void 0, void 0, function* () {
-            // if it exists, remove(inputAnswer);
+            // if it exists, remove inputAnswer;
             if (document.getElementById('answer') !== null) {
                 document.getElementById('answer').remove();
             }
+            // if it exists, remove input radio
             //  if(document.querySelector('.form-check-input')!.classList!.contains("form-check-input")) { // Get element from DOM
             //   // document.querySelector('form-check-input')!.classList!.remove('form-check-input') // Remove class "form-check-input"
             // }
             // http://staff.washington.edu/weller/css/DOM2.html
             if (document.getElementsByTagName('input') !== null) {
                 //   document.getElementById('answer-form')!.remove();
-                console.log('found');
+                // console.log('found');
             }
             // fetch questions 
             // error chrome: https://stackoverflow.com/questions/49971575/chrome-fetch-api-cannot-load-file-how-to-workaround
@@ -50,11 +50,6 @@ window.onload = function () {
             // btn.innerHTML = 'Submit Answer';
             // btn.innerText = 'Submit Answer';
             // (<HTMLInputElement>answer)!.value = '';
-            // https://stackoverflow.com/questions/62189176/how-can-i-create-a-button-that-increments-a-counter-when-clicked
-            // arrQ.forEach((element :any, index :number)=> {
-            //   console.log('element: ', element);
-            //   console.log('index: ', index);
-            // });
             // use return instead of break: (MDN) A break statement, with or without a following label, cannot be used within the body of a function that is itself nested within the current loop
             if (count === 10) {
                 return;
@@ -84,8 +79,8 @@ window.onload = function () {
                 parentDiv.parentNode.insertBefore(newEl, parentDiv);
             }
             if (answerType === 'boolean' || answerType === 'single-select') {
-                console.log(arrQ[count].type);
-                console.log(arrQ[count].options); // is an array
+                // console.log(arrQ[count].type);
+                // console.log(arrQ[count].options); // is an array
                 let arrOptions = arrQ[count].options;
                 arrOptions.forEach((element, index) => {
                     // create a new input type radio element
@@ -107,11 +102,10 @@ window.onload = function () {
                     newLab.setAttribute("for", index.toString());
                     newLab.innerHTML = element;
                     newLab.className = "form-check-label";
-                    // add the text node to the newly created div
-                    // newEl?.appendChild(newLab);
-                    // console.log(newEl);
-                    // add the newly created element and its content into the DOM
-                    // displayDiv!.appendChild(newEl);
+                    // add the text node to the newly created input
+                    // newEl?.appendChild(newLab); // do not do this due to input self closing character
+                    console.log(newEl);
+                    // add the newly created element and its content into the parent node
                     // https://stackoverflow.com/questions/62245350/how-to-create-textnode-for-radio-button-with-js
                     let parentDiv = document.getElementById("answer-form");
                     parentDiv.parentNode.insertBefore(newEl, parentDiv);
