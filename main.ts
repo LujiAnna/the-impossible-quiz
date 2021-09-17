@@ -8,7 +8,6 @@ const btn = <HTMLInputElement>document.getElementById('btn');
 const questionNumber = <HTMLInputElement>document.getElementById('question-number');
 const displayDiv = <HTMLInputElement>document.getElementById("display");
 displayDiv!.className = "form-check";
-let parentDiv =  <HTMLInputElement>document.getElementById("answer-form");
 
 const questions = 'questions.json';
 
@@ -21,6 +20,7 @@ async function newQuestion ()  {
   if(document.getElementById('answer') !== null) {
     document.getElementById('answer')!.remove();
   }
+
 
   //  if(document.querySelector('.form-check-input')!.classList!.contains("form-check-input")) { // Get element from DOM
   //   // document.querySelector('form-check-input')!.classList!.remove('form-check-input') // Remove class "form-check-input"
@@ -101,6 +101,8 @@ async function newQuestion ()  {
     arrOptions.forEach((element :any, index :number)=> {
      // create a new input type radio element
     const newEl = document.createElement("input");
+    // create a new input type radio label for text
+    const newLab = document.createElement("label");
 
     // console.log('element: ', element);
     // console.log('index: ', index);
@@ -114,17 +116,25 @@ async function newQuestion ()  {
   newEl.setAttribute("type", "radio");
   newEl.setAttribute("name", "selection");
   newEl.setAttribute("value", element);
+  newEl.setAttribute("id", index.toString());
   newEl.className = "form-check-input";
 
+  newLab.setAttribute("for", index.toString());
+  newLab.innerHTML = element;
+  newLab.className = "form-check-label";
+
   // add the text node to the newly created div
-  newEl?.appendChild(newContent);
-  console.log(newEl);
+  // newEl?.appendChild(newLab);
+  // console.log(newEl);
 
   // add the newly created element and its content into the DOM
-  displayDiv!.appendChild(newEl);
+  // displayDiv!.appendChild(newEl);
 
-
+  // https://stackoverflow.com/questions/62245350/how-to-create-textnode-for-radio-button-with-js
+  let parentDiv =  <HTMLInputElement>document.getElementById("answer-form");
   parentDiv!.parentNode!.insertBefore(newEl, parentDiv);
+  parentDiv!.parentNode!.insertBefore(newLab, parentDiv);
+
     });  // close forEach
   // document.body.insertBefore(newEl, displayDiv);
   // parentDiv!.insertBefore(newEl, displayDiv!.nextSibling);

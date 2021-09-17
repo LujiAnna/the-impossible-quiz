@@ -17,7 +17,6 @@ window.onload = function () {
     const questionNumber = document.getElementById('question-number');
     const displayDiv = document.getElementById("display");
     displayDiv.className = "form-check";
-    let parentDiv = document.getElementById("answer-form");
     const questions = 'questions.json';
     let count = 0;
     // Load a new question through an async request
@@ -91,6 +90,8 @@ window.onload = function () {
                 arrOptions.forEach((element, index) => {
                     // create a new input type radio element
                     const newEl = document.createElement("input");
+                    // create a new input type radio label for text
+                    const newLab = document.createElement("label");
                     // console.log('element: ', element);
                     // console.log('index: ', index);
                     // and give it some content
@@ -101,13 +102,20 @@ window.onload = function () {
                     newEl.setAttribute("type", "radio");
                     newEl.setAttribute("name", "selection");
                     newEl.setAttribute("value", element);
+                    newEl.setAttribute("id", index.toString());
                     newEl.className = "form-check-input";
+                    newLab.setAttribute("for", index.toString());
+                    newLab.innerHTML = element;
+                    newLab.className = "form-check-label";
                     // add the text node to the newly created div
-                    newEl === null || newEl === void 0 ? void 0 : newEl.appendChild(newContent);
-                    console.log(newEl);
+                    // newEl?.appendChild(newLab);
+                    // console.log(newEl);
                     // add the newly created element and its content into the DOM
-                    displayDiv.appendChild(newEl);
+                    // displayDiv!.appendChild(newEl);
+                    // https://stackoverflow.com/questions/62245350/how-to-create-textnode-for-radio-button-with-js
+                    let parentDiv = document.getElementById("answer-form");
                     parentDiv.parentNode.insertBefore(newEl, parentDiv);
+                    parentDiv.parentNode.insertBefore(newLab, parentDiv);
                 }); // close forEach
                 // document.body.insertBefore(newEl, displayDiv);
                 // parentDiv!.insertBefore(newEl, displayDiv!.nextSibling);
